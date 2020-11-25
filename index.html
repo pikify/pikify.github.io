@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en" style="  scroll-behavior: smooth;">
+
+<head>
+    <link rel="icon" type="image/png" href="/assets/img/logos/favicon.png" />
+    <meta charset="utf-8">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#28b6f7">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#28b6f7">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#28b6f7">
+    <title>Pikify | Fotografía al alcance de todos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fotografía Profesional al alcance de todos">
+    <!-- Begin loading animation -->
+    <link href="assets/css/loaders/loader-pulse.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- End loading animation -->
+    <script src="https://kit.fontawesome.com/c972ababac.js" crossorigin="anonymous"></script>
+    <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+    function showHideCantidad() {
+        if (document.getElementById('sesion').value == "real-estate") {
+            document.getElementById('colCantidad').style.display = 'block';
+            document.getElementById('labelCantidad').innerHTML = "Cantidad aproximada de Inmuebles";
+        } else if (document.getElementById('sesion').value == "producto") {
+            document.getElementById('colCantidad').style.display = 'block';
+            document.getElementById('labelCantidad').innerHTML = "Cantidad de productos a fotografíar";
+        } else if (document.getElementById('sesion').value == "retrato") {
+            document.getElementById('colCantidad').style.display = 'block';
+            document.getElementById('labelCantidad').innerHTML = "Cantidad de personas fotografiar";
+        } else if (document.getElementById('sesion').value == "eventos") {
+            document.getElementById('colCantidad').style.display = 'block';
+            document.getElementById('labelCantidad').innerHTML = "Cantidad aproximada de asistentes";
+        } else {
+            document.getElementById('colCantidad').style.display = 'none';
+        }
+    }
+    window.onload = function() {
+        var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+        if ($recaptcha) {
+            $recaptcha.setAttribute("required", "required");
+        }
+    };
+    </script>
+</head>
+<style>
+    #g-recaptcha-response {
+    display: block !important;
+    position: absolute;
+    margin: -78px 0 0 0 !important;
+    width: 302px !important;
+    height: 76px !important;
+    z-index: -999999;
+    opacity: 0;
+}
+  </style>
+
+<body>
+    <div class="loader">
+        <div class="loading-animation"></div>
+    </div>
+    <!--Menus-->
+    <div class="navbar-container" style="min-height: 77.7813px;">
+        <nav class="navbar navbar-expand-lg navbar-light position-fixed" data-sticky="top" style="max-width: 358px; top: 0px;">
+            <div class="container">
+                <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="index.html">
+                    <img src="/assets/img/logos/logo-header.png">
+                </a>
+                <div class="d-flex align-items-center order-lg-3">
+                    <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg navbar-toggler-open icon icon-sm" data-src="assets/img/icons/interface/icon-menu.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="M3 12H21" stroke="#2C3038" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M3 6H21" stroke="#2C3038" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M3 18H21" stroke="#2C3038" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg navbar-toggler-close icon icon-sm" data-src="assets/img/icons/interface/icon-x.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="M18 6L6 18" stroke="#2C3038" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M6 6L18 18" stroke="#2C3038" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-lg-end" id="navigation-menu">
+                    <ul class="navbar-nav my-3 my-lg-0">
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a aria-expanded="false" aria-haspopup="true" class=" nav-link nav-item" data-toggle="dropdown-grid" href="index.html" role="button">Inicio</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a aria-expanded="false" aria-haspopup="true" class=" nav-link nav-item" data-toggle="dropdown-grid" href="#servicios" role="button">Servicios</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link nav-item arrow-bottom" data-toggle="dropdown-grid" href="contacto.html" role="button">Contacto</a>
+                                <div class="row dropdown-menu" style="left: 0px;">
+                                    <div class="col-auto" data-dropdown-content="" style="left: 0px;">
+                                        <div class="dropdown-grid-menu"><a href="contacto.html" class="dropdown-item fade-page">Contacto</a><a href="#preguntas-frecuentes" class="dropdown-item">FAQ's</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--Portada-->
+    <section style="height: 100vh;" class="p-0 border-top border-bottom row no-gutters">
+        <div class="col-lg-8 col-xl-8" style="z-index: 2;">
+            <div class="container min-vh-lg-80 d-flex align-items-center">
+                <div class="row justify-content-center">
+                    <div class="col col-md-9 col-xl-9 text-center text-lg-left">
+                        <section>
+                            <div data-aos="fade-right">
+                                <h1 class="display-3" style="color: #28b6f7; font-family: Roboto, sans-serif;"><b>Fotografía profesional</b> al alcance de todos</h1>
+                                <p class="lead">
+                                    Nuestros fotógrafos son elegidos cuidadosamente para ofrecer el mejor servicio
+                                </p>
+                            </div>
+                            <div class="d-flex flex-column flex-sm-row mt-4 mt-md-5 justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="300">
+                                <a href="#como-funciona" class="btn btn-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">Cómo funciona</a>
+                                <a href="#reservar" class="btn btn-outline-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">Reservar</a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xl-4 d-lg-flex flex-lg-column">
+            <div class="container min-vh-lg-80 d-flex align-items-center">
+                <img style="z-index: 1;" id="foto-portada" src="assets/img/heros/foto-portada.png" alt="Pikify">
+            </div>
+        </div>
+    </section>
+    <!--Cómo funciona -->
+    <section id="como-funciona" class="bg-light" style="min-height: 100vh; text-align: center;">
+        <div class="container">
+            <div class="row section-title justify-content-center text-center">
+                <div class="col-md-9 col-lg-8 col-xl-7">
+                    <h2 class="display-4">Cómo funciona</h2>
+                    <div class="lead">Reserva un fotografo profesional en toda España en tan sólo tres sencillos pasos.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-3 mb-md-4 mb-lg-0">
+                    <div class="card h-100 hover-box-shadow">
+                        <div class="card-body">
+                            <h1 style="color: #01b5fa; font-size:450%;"><i class="far fa-calendar-alt"></i></h1>
+                            <h3>1. Booking</h3>
+                            <p>
+                                Explícanos lo que necesitas y nosotros nos ocupamos del resto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3 mb-md-4 mb-lg-0">
+                    <div class="card h-100 hover-box-shadow">
+                        <div class="card-body">
+                            <h1 style="color: #01b5fa; font-size:450%;"><i class="fas fa-camera"></i></h1>
+                            <h3>2. Shooting</h3>
+                            <p>
+                                Nuestro fotógrafo realizará la sesión con todo el equipo necesario. Tú sólo tienes que relajarte.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-3 mb-md-4 mb-lg-0 " style="margin: auto;">
+                    <div class="card h-100 hover-box-shadow">
+                        <div class="card-body">
+                            <h1 style="color: #01b5fa; font-size:450%;"><i class="fas fa-cloud-download-alt"></i></h1>
+                            <h3>3. Delivery</h3>
+                            <p>
+                                ¡Listo! En menos de 24 horas tendrás tus fotos editadas y listas para descargar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-center mt-4 mt-md-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+            <a href="#servicios" class="btn btn-primary mx-sm-2 my-1 my-sm-0">Ver Servicios</a>
+        </div>
+    </section>
+    <!--Servicios-->
+    <section id="servicios" class="o-hidden" style="min-height: 100vh;">
+        <div class="container">
+            <div class="row section-title justify-content-center text-center">
+                <div class="col-md-9 col-lg-8 col-xl-7">
+                    <h3 class="display-4">Nuestros Servicios</h3>
+                    <div class="lead">Ofrecemos servicios de fotografía profesional para empresas. Si necesitas algo diferente, no dudes en contactarnos.</div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul class="nav nav-tabs lead mb-4 mb-md-5 justify-content-center" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="real-estate-tab" data-toggle="tab" href="#real-estate" role="tab" aria-controls="real-estate" aria-selected="true">Real Estate</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="producto-tab" data-toggle="tab" href="#producto" role="tab" aria-controls="producto" aria-selected="false">Producto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="retrato-tab" data-toggle="tab" href="#retrato" role="tab" aria-controls="retrato" aria-selected="false">Retrato</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="eventos-tab" data-toggle="tab" href="#eventos" role="tab" aria-controls="eventos" aria-selected="false">Eventos</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade active show" id="real-estate" role="tabpanel" aria-labelledby="real-estate">
+                                <div class="row align-items-center justify-content-around">
+                                    <div class="col-lg-6 col-xl-5 text-center text-lg-left mb-4 mb-md-5 mb-lg-0">
+                                        <div class="pr-lg-4 pr-xl-5 aos-init aos-animate" data-aos="fade-right">
+                                            <h3 class="h1">Solución integral para inmobiliarias</h3>
+                                            <p>
+                                                Fotografía inmobiliaria tanto comercial como residencial. Ofrecemos Reportaje fotográfico y Tour Virtual 360.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-7 aos-init aos-animate" data-aos="fade-left">
+                                        <img src="assets/img/fotografia/fotografia-real-estate.jpg" alt="Screenshot" class="img-fluid rounded shadow border">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="producto" role="tabpanel" aria-labelledby="producto">
+                                <div class="row align-items-center justify-content-around">
+                                    <div class="col-lg-6 col-xl-5 text-center text-lg-left mb-4 mb-md-5 mb-lg-0">
+                                        <div class="pr-lg-4 pr-xl-5 aos-init aos-animate" data-aos="fade-right">
+                                            <h3 class="h1">Te ayudamos a hacer crecer tu negocio</h3>
+                                            <p>
+                                                La fotografía de producto desempeña una importante labor comercial para mejorar tus ventas. Ofrecemos servicio especial de recogida y entrega de tus productos.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-7 aos-init aos-animate" data-aos="fade-left">
+                                        <img src="assets/img/fotografia/fotografia-producto.png" alt="Screenshot" class="img-fluid rounded shadow border">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="retrato" role="tabpanel" aria-labelledby="retrato">
+                                <div class="row align-items-center justify-content-around">
+                                    <div class="col-lg-6 col-xl-5 text-center text-lg-left mb-4 mb-md-5 mb-lg-0">
+                                        <div class="pr-lg-4 pr-xl-5 aos-init aos-animate" data-aos="fade-right">
+                                            <h3 class="h1">Fotografía profesional para todos tus empleados</h3>
+                                            <p>
+                                                Una buena imagen corporativa establece confianza, lealtad y buenas relaciones para tu empresa. Ofrecemos servicio integral de set y sesión en oficinas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-7 aos-init aos-animate" data-aos="fade-left">
+                                        <img src="assets/img/fotografia/fotografia-retrato.png" alt="Screenshot" class="img-fluid rounded shadow border">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="eventos" role="tabpanel" aria-labelledby="eventos">
+                                <div class="row align-items-center justify-content-around">
+                                    <div class="col-lg-6 col-xl-5 text-center text-lg-left mb-4 mb-md-5 mb-lg-0">
+                                        <div class="pr-lg-4 pr-xl-5 aos-init aos-animate" data-aos="fade-right">
+                                            <h3 class="h1">Una imagen vale más que mil palabras</h3>
+                                            <p>
+                                                Una buena imagen en tus eventos es una herramienta de marketing y promoción eficiente. Ofrecemos servicio de fotógrafos por horas.
+                                            </p>
+                                            <div class="mt-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-7 aos-init aos-animate" data-aos="fade-left">
+                                        <img src="assets/img/fotografia/fotografia-eventos.png" alt="Screenshot" class="img-fluid rounded shadow border">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-center mt-4 mt-md-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                <a href="#reservar" class="btn btn-primary mx-sm-2 my-1 my-sm-0">Reservar</a>
+            </div>
+    </section>
+    <!--Clientes-->
+    <section id="clientes" class="bg-secondary">
+        <div class="container">
+            <div class="row section-title justify-content-center text-center">
+                <div class="col-md-9 col-lg-8 col-xl-7">
+                    <h3 class="display-4">Confían en nosotros</h3>
+                    <div class="lead">Las mejores empresas del sector ya utilizan Pikify, ¿a qué estas esperando?</div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-9 d-flex flex-wrap justify-content-center">
+                    
+                    <div class="m-2">
+                        <div class="media rounded align-items-center px-3 px-md-4 py-2 py-md-3 bg-white">
+                            <img  src="assets/img/logos/brand/higuests.png" alt="Higuests" class="icon icon-sm mr-3">
+                        </div>
+                    </div>
+
+                    <div class="m-2">
+                        <div class="media rounded align-items-center px-3 px-md-4 py-2 py-md-3 bg-white">
+                            <img src="assets/img/logos/brand/housell.png" alt="Housell" class="icon icon-sm mr-3">
+                        </div>
+                    </div>
+                    
+
+                    <div class="m-2">
+                        <div class="media rounded align-items-center px-3 px-md-4 py-2 py-md-3 bg-white">
+                            <img src="assets/img/logos/brand/akiles.png" alt="Akiles" class="icon icon-sm mr-3">
+                        </div>
+                    </div>
+                    <div class="m-2">
+                        <div class="media rounded align-items-center px-3 px-md-4 py-2 py-md-3 bg-white">
+                            <img style="" src="assets/img/logos/brand/formel_d.png" alt="Formel D" class="icon icon-sm mr-3">
+                        </div>
+                    </div>
+                    <div class="m-2">
+                        <div class="media rounded align-items-center px-3 px-md-4 py-2 py-md-3 bg-white">
+                            <img src="assets/img/logos/brand/meller.png" alt="Meller" class="icon icon-sm mr-3">
+                        </div>
+                    </div>
+                    <div class="m-2">
+                        <div class="media rounded align-items-center px-3 px-md-4 py-2 py-md-3 bg-white">
+                            <img src="assets/img/logos/brand/clidiet.png" alt="Clidiet" class="icon icon-sm mr-3">
+                        </div>
+                    </div>
+                    
+                    <div class="m-2">
+                        <div class="media rounded align-items-center px-3 px-md-4 py-2 py-md-3 bg-white">
+                            <img src="assets/img/logos/brand/luigco.jpeg" alt="Luigco" class="icon icon-sm mr-3">
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!--Reserva-->
+    <section id="reservar" class="">
+        <div class="container">
+            <div class="row section-title justify-content-center text-center">
+                <div class="col-md-9 col-lg-8 col-xl-7">
+                    <h3 class="display-4">¿Qué necesitas?</h3>
+                    <div class="lead">Rellena este formulario y un experto de Pikify diseñará la mejor solución para tu negocio.</div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="card card-body shadow mt-md-5" id="apply-form">
+                        <form action="/forms/PHPMailer/enviar_reserva.php" method="POST">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="correo">Email </label>
+                                        <input id="correo" type="email" name="correo" class="form-control" placeholder="nombre@empresa.com" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="telefono">Teléfono</label>
+                                        <input id="telefono" type="phone" name="telefono" class="form-control" required placeholder="654 952 875">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="empresa">Empresa</label>
+                                <input placeholder="Pikify" id="empresa" name="empresa" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="fecha">Fecha Aproximada </label>
+                                        <input id="fecha" required class="form-control" name="fecha" type="text" data-flatpickr data-alt-input="true" data-date-format="d-m-Y" placeholder="Fecha de la acción">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="sesion">Tipo de sesión</label>
+                                        <div class="position-relative">
+                                            <select onchange="showHideCantidad()" class="custom-select" id="sesion" name="sesion" required>
+                                                <option selected="" value="">Selecciona una opción</option>
+                                                <option value="real-estate">Real Estate</option>
+                                                <option value="producto">Producto</option>
+                                                <option value="retrato">Retrato</option>
+                                                <option value="eventos">Eventos</option>
+                                            </select>
+                                            <img src="assets/img/icons/interface/icon-caret-down.svg" alt="Arrow Down" class="icon icon-sm">
+                                            <div class="invalid-feedback">
+                                                Porfavor escoje un tipo de sesión.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="ciudad">Ciudad</label>
+                                        <input id="ciudad" required class="form-control" name="ciudad" type="text" placeholder="Barcelona">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group" id="colCantidad" style="display:none;">
+                                        <label id="labelCantidad" for="Cantidad">Cantidad de Inmuebles</label>
+                                        <div class="position-relative">
+                                            <input id="cantidad" name="cantidad" required class="form-control" type="number" min="1" placeholder="1">
+                                            <div class="invalid-feedback">
+                                                Porfavor rellena este campo.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Breve Descripción</label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="10" placeholder="Explícanos que tienes en mente"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <div data-recaptcha data-sitekey="6Ldtc8UUAAAAACM1XxSMwrCmpKzUcp1b-nMRUKYT"></div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column flex-wrap flex-md-row justify-content-between align-items-center">
+                                <div class="custom-control custom-checkbox mb-3 mb-md-0">
+                                    <input type="checkbox" class="custom-control-input" id="terminos" name="terminos" required>
+                                    <label class="custom-control-label" for="terminos">Acepto los <a target="_blank" href="https://pikify.com/terminos-condiciones/">Términos &amp; Condiciones</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Tienes que aceptar los términos y condiciones.
+                                    </div>
+                                </div>
+                                <div class="d-none alert alert-success w-100 my-md-3" role="alert" data-success-message>
+                                    Gracias, un experto de Pikify se pondrá en contacto contigo en poco tiempo.
+                                </div>
+                                <div class="d-none alert alert-danger w-100 my-md-3" role="alert" data-error-message>
+                                    Vaya, parece que falta algo por rellenar.
+                                </div>
+                                <button class="btn btn-primary btn-loading" type="submit" data-loading-text="Sending">
+                                    <!-- Icon for loading animation -->
+                                    <svg class="icon bg-white" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <title>Icon For Loading</title>
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g>
+                                                <polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon>
+                                            </g>
+                                            <path d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+                                        </g>
+                                    </svg>
+                                    <span>Enviar</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FAQ -->
+    <section class="pb-0 bg-light" id="preguntas-frecuentes">
+        <div class="container">
+            <div class="row section-title justify-content-center text-center">
+                <div class="col-md-9 col-lg-8 col-xl-7">
+                    <h3 class="display-4">FAQ</h3>
+                    <div class="lead">Estas son las preguntas que más nos suelen hacer:</div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div id="faq-accordion">
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-1" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-2">¿Qué es Pikify?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-1" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    Pikify es una empresa tecnológica de servicios donde puedes conseguir fotografía profesional para lo que necesites de una manera rápida y cómoda. Tú sólo tienes que decirnos cuando y donde y uno de nuestros fotógrafos irá a tu localización con todo el equipo necesario. Una vez realizado el servicio podrás descargar tus fotografías.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-2" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-2">¿Dónde dais servicio?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-2" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    Actualmente damos servicio en toda España. Disponemos de fotógrafos en todas las provincias y las principales ciudades del país pudiendo abarcar todo el territorio.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-3" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-3">¿Cómo reservo un servicio?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-3" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    Para reservar un servicio tienes que rellenar el formulario de reserva con todos tus datos y la información requerida. A continuación, nos pondremos en contacto contigo para ofrecerte aquello que más se adapte a los que necesitas.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-4" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-4">¿Qué tengo que hacer si necesito un servicio personalizado?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-4" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    Nos adaptamos a lo que necesites. Si necesitas una sesión personalizada contáctanos a través del correo hola@pikify.com o llámanos al 654 952 875.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-5" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-2">¿Puedo escoger un fotógrafo específico?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-5" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    No. Todos nuestros fotógrafos han pasado por un exhaustivo proceso de selección para garantizar que todos tengan experiencia y proporcionen las mejores fotografías. Gracias a nuestro equipo de edición y nuestro sistema de IA, garantizamos la calidad de todas nuestras entregas.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-6" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-2">¿Cuántas fotografías recibiré?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-6" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    El número de fotografías depende del tipo de servicio que contrates. Durante la reserva sabrás el número de fotografías que recibirás.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-7" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-2">¿Cuándo recibiré las fotografías?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-7" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    La entrega se realiza en 24 o 48 horas (depende del servicio contratado) desde la realización de la sesión por parte del fotógrafo.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-8" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-2">¿Cómo recibiré las fotografías?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-8" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    Recibirás las fotografías a través de un enlace para que puedas descargarlas cuando y donde quieras.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-9" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-2">¿Puedo cancelar mi reserva?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-9" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    Podrás cancelar gratuitamente la reserva siempre que sea 72h antes de la fecha indicada para realizarse la sesión.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2 mb-md-3">
+                            <a href="#accordion-10" data-toggle="collapse" role="button" aria-expanded="false" class="p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 mr-2">¿Cómo y cuándo pago la sesión?</h6>
+                                    <img src="assets/img/icons/interface/icon-caret-right.svg" alt="Caret Right" class="icon icon-sm" data-inject-svg>
+                                </div>
+                            </a>
+                            <div class="collapse" id="accordion-10" data-parent="#faq-accordion">
+                                <div class="px-3 px-md-4 pb-3 pb-md-4">
+                                    El pago de la sesión siempre se realiza a través de transferencia bancaria una vez realizada la sesión y emitido la correspondiente factura o recibo.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4 mt-md-5">
+                <div class="col-auto">
+                    <div class="alert bg-white">¿Todavía tienes alguna duda? <a href="contacto.html">Contáctanos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider divider-bottom bg-primary-3"></div>
+    </section>
+
+
+    <!--Footer-->
+     <footer class="bg-primary-3 text-white links-white pb-4 footer-1">
+      <div class="container">
+       <div class="col-lg mt-2 mt-md-5 mt-lg-0 d-flex justify-content-center" >
+                <img  style="margin: 3%;position: relative; top: 10px; height: 80%" src="assets/img/logos/bcn-tech-city-white.png">
+            </div>
+        <div class="row">
+          <div class="col">
+            <hr>
+          </div>
+        </div>
+        <div class="row flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+          <div class="col-auto">
+            <div class="d-flex flex-column flex-sm-row align-items-center text-small">
+              <div class="text-muted">&copy; Pikify 2019 Al navegar en esta página aceptas los  <a href="terminos-y-condiciones.html" target="_blank">Términos y condiciones</a> y la <a href="politica-de-privacidad.html" target="_blank">Política de privacidad</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto mt-3 mt-lg-0">
+            <ul class="list-unstyled d-flex mb-0">
+              <li class="mx-3">
+                <a href="https://www.instagram.com/pikify/?hl=es" class="hover-fade-out">
+                  <img src="assets/img/icons/social/instagram.svg" alt="Instagram" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+              <li class="mx-3">
+                <a href="https://es.linkedin.com/company/pikifyoficial" class="hover-fade-out">
+                  <img src="assets/img/icons/social/linkedin.svg" alt="Linkedin" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+              <li class="mx-3">
+                <a href="https://wa.me/+34654952875" class="hover-fade-out">
+                  <img src="assets/img/icons/social/whatsapp.png" alt="whatsapp" class="icon icon-xs" >
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+        <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+    </a>
+    <!-- Required vendor scripts (Do not remove) -->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+    <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+    <script type="text/javascript" src="assets/js/aos.js"></script>
+    <!-- Clipboard (copies content from browser into OS clipboard) -->
+    <script type="text/javascript" src="assets/js/clipboard.min.js"></script>
+    <!-- Fancybox (handles image and video lightbox and galleries) -->
+    <script type="text/javascript" src="assets/js/jquery.fancybox.min.js"></script>
+    <!-- Flatpickr (calendar/date/time picker UI) -->
+    <script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
+    <!-- Flickity (handles touch enabled carousels and sliders) -->
+    <script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
+    <!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+    <script type="text/javascript" src="assets/js/ion.rangeSlider.min.js"></script>
+    <!-- Isotope (masonry layouts and filtering) -->
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <!-- jarallax (parallax effect and video backgrounds) -->
+    <script type="text/javascript" src="assets/js/jarallax.min.js"></script>
+    <script type="text/javascript" src="assets/js/jarallax-video.min.js"></script>
+    <script type="text/javascript" src="assets/js/jarallax-element.min.js"></script>
+    <!-- jQuery Countdown (displays countdown text to a specified date) -->
+    <script type="text/javascript" src="assets/js/jquery.countdown.min.js"></script>
+    <!-- jQuery smartWizard facilitates steppable wizard content -->
+    <script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
+    <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+    <script type="text/javascript" src="assets/js/plyr.polyfilled.min.js"></script>
+    <!-- Prism (displays formatted code boxes) -->
+    <script type="text/javascript" src="assets/js/prism.js"></script>
+    <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+    <script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
+    <!-- Smooth scroll (animation to links in-page)-->
+    <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.min.js"></script>
+    <!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+    <script type="text/javascript" src="assets/js/svg-injector.umd.production.js"></script>
+    <!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
+    <script type="text/javascript" src="assets/js/twitterFetcher_min.js"></script>
+    <!-- Typed text (animated typing effect)-->
+    <script type="text/javascript" src="assets/js/typed.min.js"></script>
+    <!-- Required theme scripts (Do not remove) -->
+    <script type="text/javascript" src="assets/js/theme.js"></script>
+    <!-- Removes page load animation when window is finished loading -->
+    <script type="text/javascript">
+    window.addEventListener("load", function() { document.querySelector('body').classList.add('loaded'); });
+    </script>
+</body>
+
+</html>
